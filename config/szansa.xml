@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<listaKartSzansa>
+    <kartaSzansaKwota>
+        <opis>Dostajesz 100 zł za użyczenie swojego stoku narciarskiego grupie narciarzy.</opis>
+		<kwota>100</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Wygrywasz konkurs na najpiękniejszy ogród. Pobierz 50 zł.</opis>
+		<kwota>50</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Organizowany przez Ciebie koncert okazał się wielkim sukcesem. Pobierz 200 zł.</opis>
+		<kwota>200</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Dostajesz zwrot podatku. Pobierz 100 zł.</opis>
+		<kwota>100</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Wygrywasz na loterii 100 zł.</opis>
+		<kwota>100</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Spędzasz noc w 5-gwiazdkowym hotelu. Zapłać 150 zł.</opis>
+		<kwota>-150</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Wydajesz 50 zł na zakupy.</opis>
+		<kwota>-50</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Wydajesz 200 zł na zorganizowanie imprezy w jednym z twoich klubów.</opis>
+		<kwota>-200</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Zapłać 50 zł za pilnowanie porządku na jednej z twoich plaż.</opis>
+		<kwota>-50</kwota>
+    </kartaSzansaKwota>
+
+    <kartaSzansaKwota>
+        <opis>Dostajesz mandat za szybka jazdę. Zapłać 100 zł.</opis>
+		<kwota>-100</kwota>
+    </kartaSzansaKwota>
+</listaKartSzansa>

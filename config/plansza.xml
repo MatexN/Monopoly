@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<plansza>
+    <poleSpecjalne id="0">
+	<nazwa>Start</nazwa>
+    </poleSpecjalne>
+
+    <poleUlica id="1">
+        <nazwa>ulica Konopacka</nazwa>
+        <cena>60</cena>
+        <czynsz0>2</czynsz0>
+        <czynsz1>10</czynsz1>
+        <czynsz2>30</czynsz2>
+        <czynsz3>90</czynsz3>
+        <czynsz4>160</czynsz4>
+        <czynsz5>250</czynsz5>
+        <cenaDomu>50</cenaDomu>
+    </poleUlica>
+
+    <poleSzansa id="2">
+	<nazwa>Szansa 1</nazwa>
+    </poleSzansa>
+
+    <poleUlica id="3">
+        <nazwa>ulica Stalowa</nazwa>
+        <cena>60</cena>
+        <czynsz0>4</czynsz0>
+        <czynsz1>20</czynsz1>
+        <czynsz2>60</czynsz2>
+        <czynsz3>180</czynsz3>
+        <czynsz4>320</czynsz4>
+        <czynsz5>450</czynsz5>
+        <cenaDomu>50</cenaDomu>
+    </poleUlica>
+
+    <polePodatek id="4">
+	<nazwa>Podatek</nazwa>
+	<kwotaPodatku>100</kwotaPodatku>
+    </polePodatek>
+
+    <poleDworzec id="5">
+	<nazwa>Dworzec Zachodni</nazwa>
+	<cena>200</cena>
+    </poleDworzec>
+
+    <poleUlica id="6">
+        <nazwa>ulica Radzymińska</nazwa>
+        <cena>100</cena>
+        <czynsz0>6</czynsz0>
+        <czynsz1>30</czynsz1>
+        <czynsz2>90</czynsz2>
+        <czynsz3>270</czynsz3>
+        <czynsz4>400</czynsz4>
+        <czynsz5>550</czynsz5>
+        <cenaDomu>50</cenaDomu>
+    </poleUlica>
+
+    <poleSzansa id="7">
+	<nazwa>Szansa 2</nazwa>
+    </poleSzansa>
+
+    <poleUlica id="8">
+        <nazwa>ulica Jagielońska</nazwa>
+        <cena>100</cena>
+        <czynsz0>6</czynsz0>
+        <czynsz1>30</czynsz1>
+        <czynsz2>90</czynsz2>
+        <czynsz3>270</czynsz3>
+        <czynsz4>400</czynsz4>
+        <czynsz5>550</czynsz5>
+        <cenaDomu>50</cenaDomu>
+    </poleUlica>
+
+    <poleUlica id="9">
+        <nazwa>ulica Targowa</nazwa>
+        <cena>120</cena>
+        <czynsz0>8</czynsz0>
+        <czynsz1>40</czynsz1>
+        <czynsz2>100</czynsz2>
+        <czynsz3>300</czynsz3>
+        <czynsz4>450</czynsz4>
+        <czynsz5>600</czynsz5>
+        <cenaDomu>50</cenaDomu>
+    </poleUlica>
+
+    <poleSpecjalne id="10">
+	<nazwa>Więzienie</nazwa>
+    </poleSpecjalne>
+
+    <poleUlica id="11">
+        <nazwa>ulica Płowiecka</nazwa>
+        <cena>140</cena>
+        <czynsz0>10</czynsz0>
+        <czynsz1>50</czynsz1>
+        <czynsz2>150</czynsz2>
+        <czynsz3>450</czynsz3>
+        <czynsz4>625</czynsz4>
+        <czynsz5>750</czynsz5>
+        <cenaDomu>100</cenaDomu>
+    </poleUlica>
+
+    <poleUzytecznosciPublicznej id="12">
+	<nazwa>Elektrownia</nazwa>
+	<cena>150</cena>
+    </poleUzytecznosciPublicznej>
+
+    <poleUlica id="13">
+        <nazwa>ulica Marsa</nazwa>
+        <cena>140</cena>
+        <czynsz0>10</czynsz0>
+        <czynsz1>50</czynsz1>
+        <czynsz2>150</czynsz2>
+        <czynsz3>450</czynsz3>
+        <czynsz4>625</czynsz4>
+        <czynsz5>750</czynsz5>
+        <cenaDomu>100</cenaDomu>
+    </poleUlica>
+
+    <poleUlica id="14">
+        <nazwa>ulica Grochowska</nazwa>
+        <cena>160</cena>
+        <czynsz0>12</czynsz0>
+        <czynsz1>60</czynsz1>
+        <czynsz2>180</czynsz2>
+        <czynsz3>500</czynsz3>
+        <czynsz4>700</czynsz4>
+        <czynsz5>900</czynsz5>
+        <cenaDomu>100</cenaDomu>
+    </poleUlica>
+
+    <poleDworzec id="15">
+	<nazwa>Dworzec Gdański</nazwa>
+	<cena>200</cena>
+    </poleDworzec>
+
+    <poleUlica id="16">
+        <nazwa>ulica Obozowa</nazwa>
+        <cena>180</cena>
+        <czynsz0>14</czynsz0>
+        <czynsz1>70</czynsz1>
+        <czynsz2>200</czynsz2>
+        <czynsz3>550</czynsz3>
+        <czynsz4>750</czynsz4>
+        <czynsz5>950</czynsz5>
+        <cenaDomu>100</cenaDomu>
+    </poleUlica>
+
+    <poleSzansa id="17">
+	<nazwa>Szansa 3</nazwa>
+    </poleSzansa>
+
+    <poleUlica id="18">
+        <nazwa>ulica Górczewska</nazwa>
+        <cena>180</cena>
+        <czynsz0>14</czynsz0>
+        <czynsz1>70</czynsz1>
+        <czynsz2>200</czynsz2>
+        <czynsz3>550</czynsz3>
+        <czynsz4>750</czynsz4>
+        <czynsz5>950</czynsz5>
+        <cenaDomu>100</cenaDomu>
+    </poleUlica>
+
+    <poleUlica id="19">
+        <nazwa>ulica Wolska</nazwa>
+        <cena>200</cena>
+        <czynsz0>16</czynsz0>
+        <czynsz1>80</czynsz1>
+        <czynsz2>220</czynsz2>
+        <czynsz3>600</czynsz3>
+        <czynsz4>800</czynsz4>
+        <czynsz5>1000</czynsz5>
+        <cenaDomu>100</cenaDomu>
+    </poleUlica>
+
+    <poleSpecjalne id="20">
+	<nazwa>Parking</nazwa>
+    </poleSpecjalne>
+
+    <poleUlica id="21">
+        <nazwa>ulica Mickiewicza</nazwa>
+        <cena>220</cena>
+        <czynsz0>18</czynsz0>
+        <czynsz1>90</czynsz1>
+        <czynsz2>250</czynsz2>
+        <czynsz3>700</czynsz3>
+        <czynsz4>875</czynsz4>
+        <czynsz5>1050</czynsz5>
+        <cenaDomu>150</cenaDomu>
+    </poleUlica>
+
+    <poleSzansa id="22">
+	<nazwa>Szansa 4</nazwa>
+    </poleSzansa>
+
+    <poleUlica id="23">
+        <nazwa>ulica Słowackiego</nazwa>
+        <cena>220</cena>
+        <czynsz0>18</czynsz0>
+        <czynsz1>90</czynsz1>
+        <czynsz2>250</czynsz2>
+        <czynsz3>700</czynsz3>
+        <czynsz4>875</czynsz4>
+        <czynsz5>1050</czynsz5>
+        <cenaDomu>150</cenaDomu>
+    </poleUlica>
+
+    <poleUlica id="24">
+        <nazwa>Plac Wilsona</nazwa>
+        <cena>240</cena>
+        <czynsz0>20</czynsz0>
+        <czynsz1>100</czynsz1>
+        <czynsz2>300</czynsz2>
+        <czynsz3>750</czynsz3>
+        <czynsz4>925</czynsz4>
+        <czynsz5>1100</czynsz5>
+        <cenaDomu>150</cenaDomu>
+    </poleUlica>
+
+    <poleDworzec id="25">
+	<nazwa>Dworzec Wschodni</nazwa>
+	<cena>200</cena>
+    </poleDworzec>
+
+    <poleUlica id="26">
+        <nazwa>ulica Świętokrzyska</nazwa>
+        <cena>260</cena>
+        <czynsz0>22</czynsz0>
+        <czynsz1>110</czynsz1>
+        <czynsz2>330</czynsz2>
+        <czynsz3>800</czynsz3>
+        <czynsz4>975</czynsz4>
+        <czynsz5>1150</czynsz5>
+        <cenaDomu>150</cenaDomu>
+	<cenaHotelu>150</cenaHotelu>
+    </poleUlica>
+
+    <poleUlica id="27">
+        <nazwa>Krakowskie Przedmieście</nazwa>
+        <cena>260</cena>
+        <czynsz0>22</czynsz0>
+        <czynsz1>110</czynsz1>
+        <czynsz2>330</czynsz2>
+        <czynsz3>800</czynsz3>
+        <czynsz4>975</czynsz4>
+        <czynsz5>1150</czynsz5>
+        <cenaDomu>150</cenaDomu>
+    </poleUlica>
+
+    <poleUzytecznosciPublicznej id="28">
+	<nazwa>Wodociągi</nazwa>
+	<cena>150</cena>
+    </poleUzytecznosciPublicznej>
+
+    <poleUlica id="29">
+        <nazwa>Nowy Świat</nazwa>
+        <cena>280</cena>
+        <czynsz0>24</czynsz0>
+        <czynsz1>120</czynsz1>
+        <czynsz2>360</czynsz2>
+        <czynsz3>850</czynsz3>
+        <czynsz4>1025</czynsz4>
+        <czynsz5>1200</czynsz5>
+        <cenaDomu>150</cenaDomu>
+    </poleUlica>
+
+    <poleIdzDoWiezienia id="30">
+	<nazwa>Idź do więzienia</nazwa>
+    </poleIdzDoWiezienia>
+
+    <poleUlica id="31">
+        <nazwa>Plac Trzecz Krzyży</nazwa>
+        <cena>300</cena>
+        <czynsz0>26</czynsz0>
+        <czynsz1>130</czynsz1>
+        <czynsz2>390</czynsz2>
+        <czynsz3>900</czynsz3>
+        <czynsz4>1100</czynsz4>
+        <czynsz5>1275</czynsz5>
+        <cenaDomu>200</cenaDomu>
+    </poleUlica>
+
+    <poleUlica id="32">
+        <nazwa>ulica Marszałkowska</nazwa>
+        <cena>300</cena>
+        <czynsz0>26</czynsz0>
+        <czynsz1>130</czynsz1>
+        <czynsz2>390</czynsz2>
+        <czynsz3>900</czynsz3>
+        <czynsz4>1100</czynsz4>
+        <czynsz5>1275</czynsz5>
+        <cenaDomu>200</cenaDomu>
+    </poleUlica>
+
+    <poleSzansa id="33">
+	<nazwa>Szansa 5</nazwa>
+    </poleSzansa>
+
+    <poleUlica id="34">
+        <nazwa>Aleje Jerozolimskie</nazwa>
+        <cena>320</cena>
+        <czynsz0>28</czynsz0>
+        <czynsz1>150</czynsz1>
+        <czynsz2>450</czynsz2>
+        <czynsz3>1000</czynsz3>
+        <czynsz4>1200</czynsz4>
+        <czynsz5>1400</czynsz5>
+        <cenaDomu>200</cenaDomu>
+    </poleUlica>
+
+    <poleDworzec id="35">
+	<nazwa>Dworzec Centralny</nazwa>
+	<cena>200</cena>
+    </poleDworzec>
+
+    <poleSzansa id="36">
+	<nazwa>Szansa 6</nazwa>
+    </poleSzansa>
+
+    <poleUlica id="37">
+        <nazwa>ulica Belwederska</nazwa>
+        <cena>350</cena>
+        <czynsz0>35</czynsz0>
+        <czynsz1>175</czynsz1>
+        <czynsz2>500</czynsz2>
+        <czynsz3>1100</czynsz3>
+        <czynsz4>1300</czynsz4>
+        <czynsz5>1500</czynsz5>
+        <cenaDomu>200</cenaDomu>
+    </poleUlica>
+
+    <polePodatek id="38">
+	<nazwa>Podatek</nazwa>
+	<kwotaPodatku>200</kwotaPodatku>
+    </polePodatek>
+
+    <poleUlica id="39">
+        <nazwa>Aleje Ujazdowskie</nazwa>
+        <cena>400</cena>
+        <czynsz0>50</czynsz0>
+        <czynsz1>200</czynsz1>
+        <czynsz2>600</czynsz2>
+        <czynsz3>1400</czynsz3>
+        <czynsz4>1700</czynsz4>
+        <czynsz5>2000</czynsz5>
+        <cenaDomu>200</cenaDomu>
+    </poleUlica>
+</plansza>

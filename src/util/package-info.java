@@ -1,0 +1,4 @@
+/**
+ * Klasy pomocnicze.
+ */
+package util;
