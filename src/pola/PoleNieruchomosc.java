@@ -4,21 +4,21 @@ import monopoly.Gracz;
 import util.Okienka;
 
 /**
- * Pole planszy bÄ™dÄ…ce dowolnÄ… nieruchomoÅ›ciÄ…. Klasa przeznaczona do rozszerzenia przez konkretne nieruchomosci,
- * (Ulica, Dworzec, pole uÅ¼ytecznoÅ›ci publicznej) implementujÄ…ce metodÄ™ liczCzynsz().
+ * Pole planszy bêd¹ce dowoln¹ nieruchomoœci¹. Klasa przeznaczona do rozszerzenia przez konkretne nieruchomosci,
+ * (Ulica, Dworzec, pole u¿ytecznoœci publicznej) implementuj¹ce metodê liczCzynsz().
  */
 public abstract class PoleNieruchomosc extends PoleGry implements Pole
 {
     /** Cena zakupu pola.*/
     protected int cena;
-    /** WÅ‚aÅ›ciciel danego pola. */
+    /** W³aœciciel danego pola. */
     protected Gracz wlasciciel;
-    /** Informacja, czy pole zostaÅ‚o zastawione. */
+    /** Informacja, czy pole zosta³o zastawione. */
     protected boolean czyZastawione;
 
     /**
      * Tworzy pole o zadanej nazwie i cenie zakupu. Domyslnie pole nie jest zastawione i nie ma wlasciciela.
-     * @param nazwa nazwa pola (np. ulica RadzymiÅ„Å›ka)
+     * @param nazwa nazwa pola (np. ulica Radzymiñœka)
      * @param cena cena zakupu danego pola
      */
     public PoleNieruchomosc(String nazwa, int cena) {
@@ -29,18 +29,17 @@ public abstract class PoleNieruchomosc extends PoleGry implements Pole
     }
 
     /**
-     * Zwraca wartoÅ›Ä‡ czynszy, ktÃ³ry musi zapÅ‚aciÄ‡ osoba wchodzÄ…ca na dane pole.
-     * @param gracz osoba, ktÃ³ra musi zapÅ‚aciÄ‡ czynsz
-     * @return wartoÅ›Ä‡ czynszu
+     * Zwraca wartoœæ czynszy, który musi zap³aciæ osoba wchodz¹ca na dane pole.
+     * @param gracz osoba, która musi zap³aciæ czynsz
+     * @return wartoœæ czynszu
      */
     public abstract int liczCzynsz(Gracz gracz);
 
     /**
-     * {@inheritDoc}
-     * JeÅ›li pole nie ma wÅ‚aÅ›ciciela gracz moÅ¼e je kupiÄ‡, w przeciwnym wypadku pole trafia na licytacjÄ™.
-     * JeÅ¼eli pole ma wÅ‚aÅ›ciciela (i nie jest to gracz, ktÃ³ry wÅ‚aÅ›nie na nie wszedÅ‚0 gracz musi zapÅ‚aciÄ‡
-     * wÅ‚aÅ›cicielowi czynsz.
-     * @param gracz gracz, ktÃ³ry wszedÅ‚ na pole
+     * Jeœli pole nie ma w³aœciciela gracz mo¿e je kupiæ, w przeciwnym wypadku pole trafia na licytacjê.
+     * Je¿eli pole ma w³aœciciela (i nie jest to gracz, który w³aœnie na nie wszed³0 gracz musi zap³aciæ
+     * w³aœcicielowi czynsz.
+     * @param gracz gracz, który wszed³ na pole
      */
     @Override
     public void PodejmijCzynnosc(Gracz gracz)
@@ -67,8 +66,8 @@ public abstract class PoleNieruchomosc extends PoleGry implements Pole
         else if ((wlasciciel != gracz) && !this.czyZastawione )
         {
             int czynsz = this.liczCzynsz(gracz);
-            Okienka.WyswietlWiadomosc("WszedÅ‚eÅ› na pole naleÅ¼ace do innego gracza. ZapÅ‚ac mu " + czynsz
-                                        + " zÅ‚.", "PÅ‚aÄ‡");
+            Okienka.WyswietlWiadomosc("Wszed³eœ na pole nale¿ace do innego gracza. Zap³ac mu " + czynsz
+                                        + " z³.", "P³aæ");
             gracz.odejmijPieniadze(czynsz);
             wlasciciel.dodajPieniadze(czynsz);
         }

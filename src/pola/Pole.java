@@ -8,9 +8,9 @@ import wyjatki.BoardCreatingException;
  */
 public interface Pole 
 {
-	/** Metoda uruchamiana po wej≈õciu przez gracza na dane pole.
-	 * @param gracz osoba, kt√≥ra wesz≈Ça na pole
-     * @throws BoardCreatingException je≈ºeli wystƒÖpi b≈ÇƒÖd podczas tworzenia jakiego≈õ elementu planszy
+	/** Metoda uruchamiana po wejúciu przez gracza na dane pole.
+	 * @param gracz osoba, ktÛra wesz≥a na pole
+     * @throws BoardCreatingException jeøeli wystπpi b≥πd podczas tworzenia jakiegoú elementu planszy
      * */
 	void PodejmijCzynnosc(Gracz gracz) throws BoardCreatingException;
 }

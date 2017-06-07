@@ -4,7 +4,7 @@ import util.Okienka;
 import wyjatki.BoardCreatingException;
 
 /**
- * GÅ‚Ã³wna klasa programu
+ * G³ówna klasa programu
  */
 public class main {
 	public static void main(String[] args) throws BoardCreatingException {
@@ -12,7 +12,7 @@ public class main {
 			GlowneOkno okno = new GlowneOkno();
 			okno.setVisible(true);
 		} catch (BoardCreatingException e) {
-			Okienka.WyswietlWiadomosc("WystÄ…piÅ‚ bÅ‚Ä…d podczas tworzenia planszy. Uruchom grÄ™ ponownie", "BÅ‚Ä…d");
+			Okienka.WyswietlWiadomosc("Wyst¹pi³ b³¹d podczas tworzenia planszy. Uruchom grê ponownie", "B³¹d");
 		}
 	}
 

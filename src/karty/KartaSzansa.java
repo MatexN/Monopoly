@@ -3,17 +3,13 @@ package karty;
 import monopoly.Gracz;
 
 /**
- * Interfejs KartaSzansa dostarcza metodÄ™ wykonywanÄ… przez gracza
- * po wylosowaniu danej karty.
+ * Interfejs KartaSzansa dostarcza metodê wykonywan¹ przez gracza po wylosowaniu
+ * danej karty.
  */
-public interface KartaSzansa
-{
-    /**
-     *
-     * @param gracz Osoba, ktÃ³ra wylosowaÅ‚a danÄ… kartÄ™
-     * @see SzansaIdzDo
-     * @see SzansaIdzDoWiezienia
-     * @see SzansaPieniadze
-     */
-    void WykonajCzynnosc(Gracz gracz);
+public interface KartaSzansa {
+	/**
+	 * Metoda wykonuj¹ca czynnoœæ przypisan¹ do wylosowanej karty.
+	 * @param gracz dla którego ma byæ wykonana czynnoœæ
+	 */
+	void WykonajCzynnosc(Gracz gracz);
 }

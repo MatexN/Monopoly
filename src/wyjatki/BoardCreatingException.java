@@ -5,7 +5,12 @@ package wyjatki;
  */
 public class BoardCreatingException extends Exception
 {
-    public BoardCreatingException() { }
+    /**
+	 * Domyœlny numer seryjny
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public BoardCreatingException() { }
 
     public BoardCreatingException(String message) {
         super(message);

@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pola.Pole;
+import pola.PoleNieruchomosc;
 import util.Kostka;
 import util.Okienka;
 import util.Ustawienia;
@@ -12,78 +13,113 @@ import util.Ustawienia;
  * Klasa reprezentujaca gracza.
  */
 public class Gracz {
+	/**
+	 * Pole przechowuje iloœæ pieniêdzy gracza.
+	 */
 	private int iloscPieniedzy;
+	/**
+	 * Pole przechowuje informacjê czy gracz jest w Wiêzieniu.
+	 */
 	private boolean czyWWiezieniu;
+	/**
+	 * Pole przechowuje listê posiadanych nieruchomoœci
+	 */
 	private List<Pole> posiadaneNieruchomosci;
+	/**
+	 * Pole przechowuje listê nazw posiadanych nieruchomoœci
+	 */
+	private LinkedList<String> posiadaneNieruchomosciNazwa;
+	/**
+	 * Pole przechowuje aktualn¹ pozycjê gracza na planszy.
+	 */
 	private int pozycja;
+	/**
+	 * Pole przechowuje liczbê podjêtych prób wyjœcia z Wiêzienia.
+	 */
 	private int probyWyjsciaZWiezienia;
-	private int ofertyHandlu;
-	private Pole obecnePole;
+	/**
+	 * Pole przechowuje sumê oczek wylosowanych przy rzucie koœæmi.
+	 */
 	private int sumaWyrzuconychOczek;
 
 	/**
-	 * Tworzy obiekt klasy z zadanÄ… iloÅ›ciÄ… pieniÄ™dzy na start.
+	 * Tworzy obiekt klasy z zadan¹ iloœci¹ pieniêdzy na start.
 	 *
 	 * @param iloscPieniedzy
-	 *            startowa kwota pieniÄ™dzy.
+	 *            startowa kwota pieniêdzy.
 	 */
 	public Gracz(int iloscPieniedzy) {
 		this.iloscPieniedzy = iloscPieniedzy;
 		czyWWiezieniu = false;
 		posiadaneNieruchomosci = new LinkedList<>();
+		posiadaneNieruchomosciNazwa = new LinkedList<>();
 		pozycja = 0;
 		probyWyjsciaZWiezienia = 0;
-		ofertyHandlu = 0;
 	}
 
 	/**
-	 * Dodaje graczowi podanÄ… kwotÄ™.
+	 * Dodaje graczowi podan¹ kwotê.
 	 * 
 	 * @param iloscPieniedzy
-	 *            iloÅ›Ä‡ pieniÄ™dzy do dodania
+	 *            iloœæ pieniêdzy do dodania
 	 * @throws IllegalArgumentException
-	 *             jeÅ¼eli przekazano ujemnÄ… kwotÄ™
+	 *             je¿eli przekazano ujemn¹ kwotê
 	 */
 	public void dodajPieniadze(int iloscPieniedzy) throws IllegalArgumentException {
 		if (iloscPieniedzy < 0)
-			throw new IllegalArgumentException("PrÃ³ba dodania ujemnej iloÅ›ci pieniedzy");
+			throw new IllegalArgumentException("Próba dodania ujemnej iloœci pieniedzy");
 		this.iloscPieniedzy += iloscPieniedzy;
 	}
 
 	/**
-	 * Odejmuje graczowi pieniÄ…dze.
+	 * Odejmuje graczowi pieni¹dze.
 	 * 
 	 * @param iloscPieniedzy
-	 *            iloÅ›Ä‡ pieniÄ™dzy do odjÄ™cia
+	 *            iloœæ pieniêdzy do odjêcia
 	 */
 	public void odejmijPieniadze(int iloscPieniedzy) {
 		this.iloscPieniedzy -= iloscPieniedzy;
 	}
 
 	/**
-	 * Zwraca iloÅ›Ä‡ pieniÄ™dzy posiadanych przez gracza.
+	 * Zwraca iloœæ pieniêdzy posiadanych przez gracza.
 	 * 
-	 * @return ile pieniÄ™dzy posiada gracz
+	 * @return ile pieniêdzy posiada gracz
 	 */
 	public int getIloscPieniedzy() {
 		return iloscPieniedzy;
 	}
+	
+	/**
+	 * Metoda zwraca listê nieruchomoœci posiadanych przez gracza.
+	 * @return Lista pól posiadanych przez gracza
+	 */
+	public List<Pole> getListaNieruchomosci(){
+		return posiadaneNieruchomosci;
+	}
+	/**
+	 * Metoda zwraca listê nazw nieruchomoœci posiadanych przez gracza.
+	 * @return Lista nazw nieruchomoœci posiadanych przez gracza.
+	 */
+	public LinkedList<String> getListaNieruchomosciNazwy(){
+		return posiadaneNieruchomosciNazwa;
+	}
 
 	/**
-	 * Sprawdza, czy gracz znajduje siÄ™ w wiÄ™zieniu.
+	 * Sprawdza, czy gracz znajduje siê w wiêzieniu.
 	 *
-	 * @return true jeÅ¼eli gracz jest w wiÄ™zieniu, false w przeciwnym wypadku
+	 * @return true je¿eli gracz jest w wiêzieniu, false w przeciwnym wypadku
 	 */
 	public boolean czyWWiezieniu() {
 		return this.czyWWiezieniu;
 	}
 
 	/**
-	 * Sprawdza, czy gracz posiada danÄ… kwotÄ™ pieniÄ™dzy.
+	 * Sprawdza, czy gracz posiada dan¹ kwotê pieniêdzy.
 	 * 
 	 * @param ilosc
-	 *            iloÅ›Ä‡ pieniÄ™dzy
-	 * @return true jeÅ¼eli gracz posiada danÄ… kwotÄ™, false w przeciwnym wypadku
+	 *            iloœæ pieniêdzy
+	 * @return true je¿eli gracz posiada dan¹ kwotê, false w przeciwnym wypadku
 	 */
 	public boolean czyMaPieniadze(int ilosc) {
 		if (this.iloscPieniedzy < ilosc)
@@ -93,17 +129,18 @@ public class Gracz {
 	}
 
 	/**
-	 * Dodaje nieruchomoÅ›Ä‡ graczowi
+	 * Dodaje nieruchomoœæ graczowi
 	 *
 	 * @param nieruchomosc
-	 *            pole, ktÃ³re zostanie dodane graczowi
+	 *            pole, które zostanie dodane graczowi
 	 */
-	public void dodajNieruchomosc(Pole nieruchomosc) {
+	public void dodajNieruchomosc(PoleNieruchomosc nieruchomosc) {
 		this.posiadaneNieruchomosci.add(nieruchomosc);
+		this.posiadaneNieruchomosciNazwa.add(nieruchomosc.GetNazwa());
 	}
 
 	/**
-	 * Ustawia pozycjÄ™ gracza
+	 * Ustawia pozycjê gracza
 	 * 
 	 * @param pozycja
 	 *            zadana pozycja gracza
@@ -113,7 +150,7 @@ public class Gracz {
 	}
 
 	/**
-	 * Zwraca pozycjÄ™ gracza.
+	 * Zwraca pozycjê gracza.
 	 * 
 	 * @return pozycja gracza
 	 */
@@ -122,7 +159,7 @@ public class Gracz {
 	}
 
 	/**
-	 * WysyÅ‚a gracza do wiÄ™zienia.
+	 * Wysy³a gracza do wiêzienia.
 	 */
 	public void idzDoWiezienia() {
 		this.czyWWiezieniu = true;
@@ -130,9 +167,9 @@ public class Gracz {
 	}
 
 	/**
-	 * Metoda wywoÅ‚ywana na poczÄ…tku tury gracza. Pokazuje graczowi skierowane
-	 * do niego oferty handlowe (jeÅ¼eli jakieÅ› byÅ‚y), a nastÄ™pnie moÅ¼liwoÅ›ci
-	 * wyjÅ›cia z wiÄ™zienia (jezeli gracz jest w wiÄ™zieniu).
+	 * Metoda wywo³ywana na pocz¹tku tury gracza. Pokazuje graczowi skierowane
+	 * do niego oferty handlowe (je¿eli jakieœ by³y), a nastêpnie mo¿liwoœci
+	 * wyjœcia z wiêzienia (jezeli gracz jest w wiêzieniu).
 	 */
 	public void startTury() {
 		this.sumaWyrzuconychOczek = 0;
@@ -146,24 +183,25 @@ public class Gracz {
 				if (decyzja == 0) {
 					int kostka1 = Kostka.Rzuc();
 					int kostka2 = Kostka.Rzuc();
+					Okienka.WyswietlKostke(kostka1, kostka2);
 					if (kostka1 == kostka2) {
 						this.sumaWyrzuconychOczek = kostka1 + kostka2;
 						this.czyWWiezieniu = false;
-						Okienka.WyswietlWiadomosc("UdaÅ‚o ci siÄ™ wyrzuciÄ‡ dublet, moÅ¼esz wyjÅ›Ä‡ z wiÄ™zienia.",
-								"WiÄ™zenie");
+						Okienka.WyswietlWiadomosc("Uda³o ci siê wyrzuciæ dublet, mo¿esz wyjœæ z wiêzienia.",
+								"Wiêzenie");
 					} else {
 						probyWyjsciaZWiezienia++;
-						Okienka.WyswietlWiadomosc("Nie udaÅ‚o ci siÄ™ wyrzuciÄ‡ dubletu.", "WiÄ™zienie");
+						Okienka.WyswietlWiadomosc("Nie uda³o ci siê wyrzuciæ dubletu.", "Wiêzienie");
 					}
 				} else {
 					this.odejmijPieniadze(50);
 					this.czyWWiezieniu = false;
 				}
 			}
-			// gracz musi zapÅ‚aciÄ‡ 50 zÅ‚
+			// gracz musi zap³aciæ 50 z³
 			else {
 				Okienka.WyswietlWiadomosc(
-						"WykorzystaÅ‚eÅ› prÃ³by wyrzucenia dubletu. ZapÅ‚aÄ‡" + "50 zÅ‚ za wyjÅ›cie z wiÄ™zienia", "WiÄ™zienie");
+						"Wykorzysta³eœ próby wyrzucenia dubletu. Zap³aæ" + "50 z³ za wyjœcie z wiêzienia", "Wiêzienie");
 				this.odejmijPieniadze(50);
 				this.czyWWiezieniu = false;
 			}
@@ -171,23 +209,26 @@ public class Gracz {
 	}
 
 	/**
-	 * Losuje o ile gracz ma siÄ™ ruszyÄ‡ i wykonuje ruch.
+	 * Losuje o ile gracz ma siê ruszyæ i wykonuje ruch.
 	 */
 	public void wykonajRuch() {
-		this.sumaWyrzuconychOczek = Kostka.Rzuc() + Kostka.Rzuc();
+		int oczka1 = Kostka.Rzuc();
+		int oczka2 = Kostka.Rzuc();
+		Okienka.WyswietlKostke(oczka1, oczka2);
+		this.sumaWyrzuconychOczek = oczka1 + oczka2;
 		this.wykonajRuch(sumaWyrzuconychOczek);
 	}
 
 	/**
-	 * Wykonuje ruch gracza o zadanÄ… liczbÄ™ pÃ³l.
+	 * Wykonuje ruch gracza o zadan¹ liczbê pól.
 	 * 
 	 * @param oIle
-	 *            o ile pÃ³l przesunÄ…Ä‡ gracza
+	 *            o ile pól przesun¹æ gracza
 	 */
 	public void wykonajRuch(int oIle) {
 		this.sumaWyrzuconychOczek = oIle;
 		int dokad = this.pozycja + this.sumaWyrzuconychOczek;
-		if (dokad > 39 && dokad == 0)
+		if (dokad > 39)
 			this.dodajPieniadze(Ustawienia.kwotaStart);
 		dokad %= 40;
 
@@ -195,9 +236,9 @@ public class Gracz {
 	}
 
 	/**
-	 * Zwraca iloÅ›Ä‡ dworcÃ³w posiadanych przez gracz.
+	 * Zwraca iloœæ dworców posiadanych przez gracz.
 	 *
-	 * @return licz dworcÃ³w posiadanych przez gracza
+	 * @return liczba dworców posiadanych przez gracza
 	 */
 	public int liczbaDworcow() {
 		int liczbaDworcow = 0;
@@ -210,9 +251,9 @@ public class Gracz {
 	}
 
 	/**
-	 * Zwraca iloÅ›Ä‡ obiektÃ³w uÅ¼ytecznoÅ›ci publicznej posiadanych przez gracza.
+	 * Zwraca iloœæ obiektów u¿ytecznoœci publicznej posiadanych przez gracza.
 	 *
-	 * @return iloÅ›Ä‡ obiektÃ³w uÅ¼ytecznoÅ›ci publicznej posiadanych przez gracza
+	 * @return iloœæ obiektów u¿ytecznoœci publicznej posiadanych przez gracza
 	 */
 	public int liczbaObiektowUzytecznosciPublicznej() {
 		int liczbaObiektow = 0;
@@ -226,9 +267,9 @@ public class Gracz {
 	}
 
 	/**
-	 * Zwraca sume oczek, ktÃ³rÄ… gracz wyrzuciÅ‚ w danej turze.
+	 * Zwraca sume oczek, któr¹ gracz wyrzuci³ w danej turze.
 	 * 
-	 * @return ile oczek gracz wyrzuciÅ‚ w tej turze
+	 * @return ile oczek gracz wyrzuci³ w tej turze
 	 */
 	public int getSumaWyrzuconychOczek() {
 		return this.sumaWyrzuconychOczek;

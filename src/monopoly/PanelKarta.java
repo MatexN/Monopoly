@@ -9,9 +9,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
- * Panel do obs≈Çugi kart
+ * Panel do obs≥ugi kart
  */
 public class PanelKarta extends JPanel {
+	
+	private static final long serialVersionUID = 1L;
 	BufferedImage Image;
 
 	public PanelKarta(int i) {
@@ -24,7 +26,10 @@ public class PanelKarta extends JPanel {
 		}
 
 	}
-
+	
+	/**
+	 * Metoda rysujπca komponenty.
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		g.drawImage(Image, 0, 0, null);

@@ -3,21 +3,27 @@ package pola;
 import monopoly.Gracz;
 
 /**
- * Pole u≈ºyteczno≈õci publicznej. Na planszy znajdujƒÖ siƒô 2 takie pola.
+ * Pole uøytecznoúci publicznej. Na planszy znajdujπ siÍ 2 takie pola.
  */
 public class PoleUzytecznosciPublicznej extends PoleNieruchomosc implements Pole
 {
+	/**
+	 * Konstruktor obiektu klasy Pole Uøytecznoúci Publicznej.
+	 * @param nazwa Pola Uøytecznoúci Publicznej
+	 * @param cena pola
+	 */
     public PoleUzytecznosciPublicznej(String nazwa, int cena) {
         super(nazwa, cena);
     }
 
     /**
-     * {@inheritDoc}
-     * Czynsz jest zale≈ºny od tego ile obiekt√≥w u≈ºyteczno≈õci publicznej posiada w≈Ça≈õciciel pola.
-     * Jezeli w≈Ça≈õciciel posiada jedno takie pole gracz p≈Çaci trzykrotno≈õƒá sumy wyrzuconych przez siebie oczek,
-     * je≈ºeli posiada obydwa gracz p≈Çaci siedmiokrotno≈õƒá sumy wyrzuconych oczek.
+     * Czynsz jest zaleøny od tego ile obiektÛw uøytecznoúci publicznej posiada w≥aúciciel pola.
+     * Jezeli w≥aúciciel posiada jedno takie pole gracz p≥aci trzykrotnoúÊ sumy wyrzuconych przez siebie oczek,
+     * jeøeli posiada obydwa gracz p≥aci siedmiokrotnoúÊ sumy wyrzuconych oczek.
      *
-     * @param gracz osoba, kt√≥ra musi zap≈Çaciƒá czynsz
+     * @param gracz osoba, ktÛra musi zap≥aciÊ czynsz
+     * 
+     * @return Zwracam kwotÍ do zap≥aty przez gracza.
      */
     @Override
     public int liczCzynsz(Gracz gracz)

@@ -1,13 +1,13 @@
 package util;
 
 /**
- * Klasa reprezentujÄ…cÄ… 6-cio Å›ciennÄ… kostkÄ™.
+ * Klasa reprezentuj¹c¹ 6-cio œcienn¹ kostkê.
  */
 public class Kostka 
 {
     /**
-     * Losuje liczbÄ™ z kostki.
-     * @return liczba caÅ‚kowita z zakresu 0-6
+     * Losuje liczbê z kostki.
+     * @return liczba ca³kowita z zakresu 1-6
      */
 	public static int Rzuc()
 	{

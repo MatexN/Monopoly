@@ -22,9 +22,10 @@ import util.Okienka;
 import wyjatki.BoardCreatingException;
 
 /**
- * GÅ‚Ã³wne okno z grÄ….
+ * G³ówne okno z gr¹.
  */
 public class GlowneOkno extends JFrame {
+	private static final long serialVersionUID = 1L;
 	int[] wspolrzedneX = { 600, 552, 504, 456, 408, 360, 312, 264, 216, 168, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82,
 			168, 216, 264, 312, 360, 408, 456, 504, 552, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600 };
 	int[] wspolrzedneY = { 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 552, 504, 456, 408, 360, 312, 264,
@@ -34,6 +35,7 @@ public class GlowneOkno extends JFrame {
 	PolePlanszy[] planszaGrafika;
 	PanelKarta[] karty;
 	JLabel obecnyGraczLabel;
+	JButton posiadaneNieruchomosciButton;
 	JLabel gotowka;
 	int indeksGracza;
 	Plansza plansza;
@@ -42,10 +44,20 @@ public class GlowneOkno extends JFrame {
 	int iloscGraczy;
 	JButton wykonajTureButton;
 
+	/**
+	 * Konstruktor tworz¹cy g³ówne okno gry. Tworzê tutaj wszystkie widoczne
+	 * podczas gry elementy planszy, elementy interfejsu gracza (przycisk
+	 * wykonania tury, wyœwietlenia posiadanych kart, informacje o saldzie
+	 * konta, oraz który gracz wykonuje ruch), oraz definiujê obs³ugê zdarzeñ
+	 * myszki.
+	 * 
+	 * @throws BoardCreatingException
+	 * 			je¿eli wyst¹pi³ b³¹d przy tworzeniu planszy.
+	 */
 	public GlowneOkno() throws BoardCreatingException {
+		iloscGraczy = Okienka.WyswietlWyborIlosciGraczy();
 		indeksGracza = 0;
 		plansza = new Plansza();
-		iloscGraczy = 2;
 		listaGraczy = new LinkedList<>();
 		for (int i = 0; i < iloscGraczy; i++)
 			listaGraczy.add(new Gracz(2000));
@@ -94,11 +106,11 @@ public class GlowneOkno extends JFrame {
 				this.add(pole);
 
 			} catch (Exception e) {
-				System.out.println("BÅ‚Ä…d");
+				System.out.println("B³¹d");
 			}
 		}
 
-		wykonajTureButton = new JButton("Wykonaj turÄ™");
+		wykonajTureButton = new JButton("Wykonaj turê");
 		wykonajTureButton.setBounds(800, 552, 150, 40);
 		wykonajTureButton.addActionListener(new ActionListener() {
 			@Override
@@ -121,6 +133,16 @@ public class GlowneOkno extends JFrame {
 		gotowka.setFont(new Font("Arial", Font.PLAIN, 18));
 		gotowka.setBounds(750, 100, 250, 50);
 
+		posiadaneNieruchomosciButton = new JButton("Poka¿ posiadane Karty");
+		posiadaneNieruchomosciButton.setBounds(750, 150, 250, 50);
+		posiadaneNieruchomosciButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PokazKarty();
+			}
+		});
+		this.add(posiadaneNieruchomosciButton);
+
 		planszaGrafika[obecnyGracz.getPozycja()].wyswietlPionek(0);
 		this.add(gotowka);
 
@@ -132,14 +154,41 @@ public class GlowneOkno extends JFrame {
 		}
 	}
 
+	/**
+	 * Metoda ustawiaj¹ca indeks gracza wykonuj¹cego ruch.
+	 */
 	public void UstawGracza() {
 		obecnyGraczLabel.setText("Obecny gracz: " + (indeksGracza + 1));
 	}
 
+	/**
+	 * Metoda ustawiaj¹ca informacjê o saldzie konta.
+	 * 
+	 * @param kwota Iloœæ pieniêdzy na koncie gracza.
+	 */
 	public void UstawPieniadze(int kwota) {
-		gotowka.setText("Posiadane pieniadze: " + kwota + " zÅ‚");
+		gotowka.setText("Posiadane pieniadze: " + kwota + " z³");
 	}
 
+	/**
+	 * Metoda wyswietlaj¹ca okno z list¹ posiadanych nieruchomoœci. Je¿eli gracz
+	 * nie posiada ¿adnych nieruchomoœci wypisuje odpowiedni¹ informacjê.
+	 */
+	public void PokazKarty() {
+		LinkedList<String> lista = obecnyGracz.getListaNieruchomosciNazwy();
+		if (lista.size() > 0) {
+			Okienka.WyswietlListePosiadanychNieruchomosci(obecnyGracz.getListaNieruchomosciNazwy());
+		} else {
+			Okienka.WyswietlWiadomosc("Gracz nie posiada nieruchomoœci.", "Lista Nieruchomoœci");
+		}
+	}
+
+	/**
+	 * Metoda uruchomiaj¹ca proces wykonywania tury.
+	 * 
+	 * @throws BoardCreatingException
+	 *             je¿eli funkcja PodejmijCzynnoœæ rzuci wyj¹tek.
+	 */
 	public void WykonajTure() throws BoardCreatingException {
 		obecnyGracz = listaGraczy.get(indeksGracza);
 		UstawGracza();
@@ -168,12 +217,12 @@ public class GlowneOkno extends JFrame {
 
 		if (obecnyGracz.getIloscPieniedzy() < 0) {
 			Okienka.WyswietlWiadomosc(
-					"Gracz " + (indeksGracza + 1) + " posiada ujemnÄ… iloÅ›Ä‡ pieniÄ™dzy" + "i wypada z gry.",
-					"PrzegraÅ‚eÅ›");
+					"Gracz " + (indeksGracza + 1) + " posiada ujemn¹ iloœæ pieniêdzy" + "i wypada z gry.",
+					"Przegra³eœ");
 			listaGraczy.remove(obecnyGracz);
 			if (this.listaGraczy.size() <= 1) {
 				wykonajTureButton.setEnabled(false);
-				Okienka.WyswietlWiadomosc("W grze zostaÅ‚ tylko jeden gracz, nastÄ™puje koniec gry", "Koniec gry");
+				Okienka.WyswietlWiadomosc("W grze zosta³ tylko jeden gracz, nastêpuje koniec gry", "Koniec gry");
 			}
 		} else {
 			indeksGracza++;

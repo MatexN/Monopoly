@@ -43,7 +43,7 @@
     </poleDworzec>
 
     <poleUlica id="6">
-        <nazwa>ulica Radzymińska</nazwa>
+        <nazwa>ulica Jagiellońska</nazwa>
         <cena>100</cena>
         <czynsz0>6</czynsz0>
         <czynsz1>30</czynsz1>
@@ -59,7 +59,7 @@
     </poleSzansa>
 
     <poleUlica id="8">
-        <nazwa>ulica Jagielońska</nazwa>
+        <nazwa>ulica Radzymińska</nazwa>
         <cena>100</cena>
         <czynsz0>6</czynsz0>
         <czynsz1>30</czynsz1>
@@ -87,7 +87,7 @@
     </poleSpecjalne>
 
     <poleUlica id="11">
-        <nazwa>ulica Płowiecka</nazwa>
+        <nazwa>ulica Marsa</nazwa>
         <cena>140</cena>
         <czynsz0>10</czynsz0>
         <czynsz1>50</czynsz1>
@@ -104,14 +104,14 @@
     </poleUzytecznosciPublicznej>
 
     <poleUlica id="13">
-        <nazwa>ulica Marsa</nazwa>
+        <nazwa>ulica Płowiecka</nazwa>
         <cena>140</cena>
-        <czynsz0>10</czynsz0>
-        <czynsz1>50</czynsz1>
-        <czynsz2>150</czynsz2>
-        <czynsz3>450</czynsz3>
-        <czynsz4>625</czynsz4>
-        <czynsz5>750</czynsz5>
+        <czynsz0>14</czynsz0>
+        <czynsz1>70</czynsz1>
+        <czynsz2>200</czynsz2>
+        <czynsz3>550</czynsz3>
+        <czynsz4>750</czynsz4>
+        <czynsz5>950</czynsz5>
         <cenaDomu>100</cenaDomu>
     </poleUlica>
 

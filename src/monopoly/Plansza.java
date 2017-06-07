@@ -22,18 +22,21 @@ import util.Ustawienia;
 import wyjatki.BoardCreatingException;
 
 /**
- * Plansza do gry. Plansza skÅ‚ada siÄ™ z 40 pÃ³l.
+ * Plansza do gry. Plansza sk³ada siê z 40 pól.
  */
 public class Plansza {
+	/**
+	 * Pole zawieraj¹ce tablicê pól z których s³ada siê plansza gry.
+	 */
 	private Pole[] plansza;
 
 	/**
-	 * Tworzy planszÄ™ na podstawie pliku xml, ktÃ³rego nazwa znajduje siÄ™ w
-	 * {@link util.Ustawienia#plikPlansza}. Metoda wykorzystuje parser DOM do
-	 * obsÅ‚ugi pliku.
+	 * Tworzy planszê na podstawie pliku xml, którego nazwa znajduje siê w Ustawieniach.
+	 * Tworzê obiekty poszczególnych pól, pobieraj¹c odpowiednie dane z pliku.
+	 *  Metoda wykorzystuje parser DOM do obs³ugi pliku.
 	 *
 	 * @throws BoardCreatingException
-	 *             jeÅ¼eli utworzenie planszy siÄ™ nie powiodÅ‚o
+	 *             je¿eli utworzenie planszy siê nie powiod³o
 	 */
 	public Plansza() throws BoardCreatingException {
 		plansza = new Pole[40];
@@ -54,8 +57,6 @@ public class Plansza {
 					String nazwa = eElement.getElementsByTagName("nazwa").item(0).getTextContent();
 					int indeks = Integer.parseInt(eElement.getAttribute("id"));
 					plansza[indeks] = new PoleSpecjalne(nazwa);
-
-					// System.out.println(indeks + " " + nazwa);
 				}
 			}
 
@@ -70,8 +71,6 @@ public class Plansza {
 					String nazwa = eElement.getElementsByTagName("nazwa").item(0).getTextContent();
 					int indeks = Integer.parseInt(eElement.getAttribute("id"));
 					plansza[indeks] = new PoleSzansa(nazwa);
-
-					// System.out.println(indeks + " " + nazwa);
 				}
 			}
 
@@ -87,8 +86,6 @@ public class Plansza {
 					String nazwa = eElement.getElementsByTagName("nazwa").item(0).getTextContent();
 					int cena = Integer.parseInt(eElement.getElementsByTagName("cena").item(0).getTextContent());
 					plansza[indeks] = new PoleDworzec(nazwa, cena);
-
-					// System.out.println(indeks + " " + nazwa);
 				}
 			}
 
@@ -118,13 +115,6 @@ public class Plansza {
 							.parseInt(eElement.getElementsByTagName("czynsz5").item(0).getTextContent());
 					int cenaDomu = Integer.parseInt(eElement.getElementsByTagName("cenaDomu").item(0).getTextContent());
 					plansza[indeks] = new PoleUlica(nazwa, cena, tablicaCzynszy, cenaDomu);
-
-					/*
-					 * System.out.println(indeks + " " + nazwa + " " + cenaDomu
-					 * + " " + tablicaCzynszy[0] + " " + tablicaCzynszy[1] + " "
-					 * + tablicaCzynszy[2] + " " + tablicaCzynszy[3] + " " +
-					 * tablicaCzynszy[4] + " " + tablicaCzynszy[5]);
-					 */
 				}
 			}
 
@@ -140,8 +130,6 @@ public class Plansza {
 					int kwotaPodatku = Integer
 							.parseInt(eElement.getElementsByTagName("kwotaPodatku").item(0).getTextContent());
 					plansza[indeks] = new PolePodatek(nazwa, kwotaPodatku);
-
-					// System.out.println(indeks + " " + nazwa);
 				}
 			}
 
@@ -156,8 +144,6 @@ public class Plansza {
 					String nazwa = eElement.getElementsByTagName("nazwa").item(0).getTextContent();
 					int cena = Integer.parseInt(eElement.getElementsByTagName("cena").item(0).getTextContent());
 					plansza[indeks] = new PoleUzytecznosciPublicznej(nazwa, cena);
-
-					// System.out.println(indeks + " " + nazwa);
 				}
 			}
 
@@ -171,13 +157,11 @@ public class Plansza {
 					int indeks = Integer.parseInt(eElement.getAttribute("id"));
 					String nazwa = eElement.getElementsByTagName("nazwa").item(0).getTextContent();
 					plansza[indeks] = new PoleIdzDoWiezienia(nazwa);
-
-					// System.out.println(indeks + " " + nazwa);
 				}
 			}
 
 		} catch (Exception e) {
-			throw new BoardCreatingException("BÅ‚Ä…d tworzenia planszy");
+			throw new BoardCreatingException("B³¹d tworzenia planszy");
 		}
 	}
 
@@ -185,13 +169,15 @@ public class Plansza {
 	 * Zwraca pole planszy o zadanym indeksie.
 	 * 
 	 * @param indeks
-	 *            indeks pola, ktore ma zwrÃ³ciÄ‡ metoda
+	 *            indeks pola, ktore ma zwróciæ metoda
 	 * @return pole o zadanym indeksie
+	 * @throws IllegalArgumentException
+	 * 				je¿eli plansza zawiera wiêcej ni¿ 40 pól.
 	 */
 	public Pole getPole(int indeks) {
 		if (indeks < 40)
 			return plansza[indeks];
 		else
-			throw new IllegalArgumentException("Indeks wiÄ™kszy od rozmiaru planszy");
+			throw new IllegalArgumentException("Indeks wiêkszy od rozmiaru planszy");
 	}
 }

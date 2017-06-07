@@ -3,21 +3,24 @@ package pola;
 import monopoly.Gracz;
 
 /**
- * Pole planszy, z ktÃ³rym nie jest zwiÄ…zana Å¼adna akcja po zatrzymaniu.
- * Takie pola to: Start, WiÄ™zienie i Parking.
+ * Pole planszy, z którym nie jest zwi¹zana ¿adna akcja po zatrzymaniu.
+ * Takie pola to: Start, Wiêzienie i Parking.
  */
 public class PoleSpecjalne extends PoleGry implements Pole
 {
 
+	/**
+	 * Konstruktor pola specjalnego
+	 * @param nazwa Nazwa Pola specjalnego
+	 */
     public PoleSpecjalne(String nazwa) {
         super(nazwa);
     }
 
     /**
-     * {@inheritDoc}
-     * Nie wykonuje Å¼adnej akcji.
+     * Nie wykonuje ¿adnej akcji.
      *
-     * @param gracz, ktÃ³ry wszedÅ‚ na pole
+     * @param gracz, który wszed³ na pole
      */
     @Override
     public void PodejmijCzynnosc(Gracz gracz) {}

@@ -5,23 +5,21 @@ import util.Okienka;
 import util.Ustawienia;
 
 /**
- * Klasa reprezentujÄ…ca karty Szansa typu IdÅº do wiÄ™zienia.
- * Po jej wylosowaniu gracz trafia do wiÄ™zienia.
+ * Klasa reprezentuj¹ca karty Szansa typu IdŸ do wiêzienia. Po jej wylosowaniu
+ * gracz trafia do wiêzienia.
  */
-public class SzansaIdzDoWiezienia implements KartaSzansa
-{
-    /**
-     * Metoda wykonywana po wylosowaniu karty przez gracza,
-     * wyÅ›wietla okno z zawartoÅ›ciÄ… karty i umieszcza gracza w wiÄ™zieniu.
-     *
-     * @param gracz  osoba, ktÃ³ra wylosowaÅ‚a danÄ… kartÄ™
-     */
-    @Override
-    public void WykonajCzynnosc(Gracz gracz)
-    {
-        String tekst = "ZostaÅ‚eÅ› aresztowany. PrzejdÅº prosto do wiÄ™zienia. " +
-                "Nie przechodÅº przez start. Nie pobieraj " + Ustawienia.kwotaStart + " zÅ‚";
-        Okienka.WyswietlWiadomosc(tekst, "Szansa");
-        gracz.idzDoWiezienia();
-    }
+public class SzansaIdzDoWiezienia implements KartaSzansa {
+
+	/**
+	 * Metoda wykonywana po wylosowaniu karty przez gracza, wyœwietla okno z
+	 * zawartoœci¹ karty i umieszcza gracza w wiêzieniu.
+	 * @param gracz dla którego ma byæ wykonana czynnoœæ
+	 */
+	@Override
+	public void WykonajCzynnosc(Gracz gracz) {
+		String tekst = "Zosta³eœ aresztowany. PrzejdŸ prosto do wiêzienia. "
+				+ "Nie przechodŸ przez start. Nie pobieraj " + Ustawienia.kwotaStart + " z³";
+		Okienka.WyswietlWiadomosc(tekst, "Szansa");
+		gracz.idzDoWiezienia();
+	}
 }

@@ -4,19 +4,25 @@ import monopoly.Gracz;
 import util.Okienka;
 
 /**
- * Klasa reprezentujÄ…ca karty Szansa typu Zyskaj/StraÄ‡ x zÅ‚
+ * Klasa reprezentuj¹ca karty Szansa zmieniaj¹cej wartoœæ konta.
  */
 public class SzansaPieniadze implements KartaSzansa
 {
+	/**
+	 * Pole przechowuj¹ce kwote z karty Szansa
+	 */
     int kwota;
+    /**
+     * Pole przechowuj¹ce tekst karty Szansa
+     */
     String tekst;
 
     /**
      * Konstruktor klasy
      *
-     * @param kwota iloÅ›Ä‡ pieniÄ™dzy, ktÃ³rÄ… zyska/straci gracz. WartoÅ›Ä‡ ujemna
-     *              oznacza, Å¼e dana kwota zostanie zabrana graczowi.
-     * @param tekst tekst karty wyÅ›wietlany graczowi
+     * @param kwota iloœæ pieniêdzy, któr¹ zyska/straci gracz. Wartoœæ ujemna
+     *              oznacza, ¿e dana kwota zostanie zabrana graczowi.
+     * @param tekst tekst karty wyœwietlany graczowi
      */
     public SzansaPieniadze(int kwota, String tekst)
     {
@@ -26,10 +32,10 @@ public class SzansaPieniadze implements KartaSzansa
 
     /**
      * Metoda wykonywana po wylosowaniu karty przez gracza.
-     * WyÅ›wietla okno z zawartoÅ›ciÄ… karty i dodaje/odejmuje graczowi
-     * iloÅ›Ä‡ pieniÄ™dzy zawartÄ… w polu kwota.
+     * Wyœwietla okno z zawartoœci¹ karty i dodaje/odejmuje graczowi
+     * iloœæ pieniêdzy zawart¹ w polu kwota.
      *
-     * @param gracz  osoba, ktÃ³ra wylosowaÅ‚a danÄ… kartÄ™
+     * @param gracz dla którego ma byæ wykonana czynnoœæ
      */
     @Override
     public void WykonajCzynnosc(Gracz gracz)

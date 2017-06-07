@@ -3,17 +3,22 @@ package pola;
 import monopoly.Gracz;
 
 /**
- * Pole nieruchomo≈õci typu dworzec.
+ * Pole nieruchomoúci typu dworzec.
  */
 public class PoleDworzec extends PoleNieruchomosc implements Pole
 {
+	/**
+	 * Konstruktor klasy PoleDworzec
+	 * @param nazwa nieruchomoúci
+	 * @param cena nieruchomoúci
+	 */
     public PoleDworzec(String nazwa, int cena) {
         super(nazwa, cena);
     }
 
     /**
-     * {@inheritDoc}
-     * Czynsz dla pola typu Dworzec to 50 * razy dworc√≥w posiadanych przez w≈Çasciela danego dworca.
+     * Czynsz dla pola typu Dworzec to 50 * razy dworcÛw posiadanych przez w≥asciela danego dworca.
+     * @return czynsz za staniÍcie na polu
      */
     @Override
     public int liczCzynsz(Gracz gracz)

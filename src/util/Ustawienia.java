@@ -3,22 +3,20 @@ package util;
 import java.awt.*;
 
 /**
- * Klasa zawierajÄ…ca ustawienia aplikacji.
+ * Klasa zawieraj¹ca ustawienia aplikacji.
  */
 public class Ustawienia
 {
-    /** IloÅ›Ä‡ graczy */
-    public static int iloscGraczy = 2;
-    /** Kwota, ktÃ³rÄ… gracz otrzymuje przy przejÅ›ciu przez pole Start.*/
+    /** Kwota, któr¹ gracz otrzymuje przy przejœciu przez pole Start.*/
     public static int kwotaStart = 200;
-    /** IloÅ›Ä‡ kart Szansa typu {@link karty.SzansaIdzDoWiezienia}.*/
+    /** Iloœæ kart Szansa typu Idz do wiêzienia.*/
     public static int iloscSzansaDoWiezienia = 2;
-    /** IloÅ›Ä‡ kart Szansa typu {@link karty.SzansaIdzDo}.*/
+    /** Iloœæ kart Szansa typu Idz do.*/
     public static int iloscSzansaIdzDo = 10;
-    /** ScieÅ¼ka do pliku xml z kartami Szansa typu {@link karty.SzansaPieniadze}.*/
+    /** Scie¿ka do pliku xml z kartami Szansa typu Pieni¹dze.*/
     public static String plikKartSzansa = "config/szansa.xml";
-    /** ScieÅ¼ka do pliku xml opisujÄ…cego pola na planszy.*/
+    /** Scie¿ka do pliku xml opisuj¹cego pola na planszy.*/
     public static String plikPlansza = "config/plansza.xml";
-    /** Tablica zawierajÄ…ca kolory poszczegÃ³lnych graczy */
+    /** Tablica zawieraj¹ca kolory poszczególnych graczy */
     public static Color[] koloryGraczy = {Color.blue, Color.orange, Color.red, Color.black};
 }

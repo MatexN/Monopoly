@@ -11,7 +11,14 @@ import java.awt.image.BufferedImage;
  */
 public class PolePlanszy extends JPanel
 {
-    private int x;
+	/**
+	 * Domyœlny numer seryjny.
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * parametry pola planszy potrzebne do narysowania planszy.
+	 */
+	private int x;
     private int y;
     private int width;
     private int height;
@@ -23,11 +30,11 @@ public class PolePlanszy extends JPanel
 
     /**
      * Tworzy pole w zadanym miejscu planszy, o podanych rozmiarach i tle.
-     * @param x wspÃ³Å‚rzÄ™dna x pola
-     * @param y wspÃ³Å‚rzÄ™dna y pola
-     * @param width szerokoÅ›Ä‡ pola
-     * @param height wysokoÅ›Ä‡ pola
-     * @param background obraz wyÅ›wietlany jako tÅ‚o
+     * @param x wspó³rzêdna x pola
+     * @param y wspó³rzêdna y pola
+     * @param width szerokoœæ pola
+     * @param height wysokoœæ pola
+     * @param background obraz wyœwietlany jako t³o
      */
     public PolePlanszy(int x, int y, int width, int height, BufferedImage background)
     {
@@ -41,6 +48,9 @@ public class PolePlanszy extends JPanel
         this.czyPionek1 = this.czyPionek2 = this.czyPionek3 = this.czyPionek4 = false;
     }
 
+    /**
+     * Metoda rysuj¹ca pola planszy.
+     */
     @Override
     public void paintComponent(Graphics g)
     {
@@ -77,7 +87,7 @@ public class PolePlanszy extends JPanel
 
     /**
      * Rysuje pionek danego gracza na polu.
-     * @param ktoryGracz ktÃ³ry pionek narysowaÄ‡
+     * @param ktoryGracz który pionek narysowaæ
      */
     public void wyswietlPionek(int ktoryGracz)
     {
@@ -102,7 +112,7 @@ public class PolePlanszy extends JPanel
     /**
      * Usuwa pionek danego gracza z pola.
      *
-     * @param ktoryGracz ktÃ³ry pionek usunÄ…Ä‡
+     * @param ktoryGracz który pionek usun¹æ
      */
     public void skasujPionek(int ktoryGracz)
     {

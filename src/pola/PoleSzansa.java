@@ -6,22 +6,25 @@ import monopoly.Gracz;
 import wyjatki.BoardCreatingException;
 
 /**
- * Pole planszy typu Szansa. Po wejÅ›ciu na pole gracz losuje kartÄ™
+ * Pole planszy typu Szansa. Po wejœciu na pole gracz losuje kartê
  * Szansa i wykonuje zawarte na niej polecenie.
  */
 public class PoleSzansa extends PoleGry implements Pole
 {
+	/**
+	 * Konstruktor Pola Szansa
+	 * @param nazwa pola
+	 */
     public PoleSzansa(String nazwa) {
         super(nazwa);
     }
 
     /**
-     * {@inheritDoc}
-     * Losuje kartÄ™ Szansa z talii
+     * Losuje kartê Szansa z talii
      * i wykonuje polecenie na wylosowanej karcie.
      *
-     * @param gracz gracz, ktÃ³ry wszedÅ‚ na pole
-     * @throws BoardCreatingException jeÅ¼eli prÃ³ba utworzenia jakiegoÅ› elementu siÄ™ nie powiedzie
+     * @param gracz gracz, który wszed³ na pole
+     * @throws BoardCreatingException je¿eli próba utworzenia jakiegoœ elementu siê nie powiedzie
      */
     @Override
     public void PodejmijCzynnosc(Gracz gracz) throws BoardCreatingException

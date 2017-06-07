@@ -4,28 +4,35 @@ import monopoly.Gracz;
 import util.Okienka;
 
 /**
- * Pole planszy, po wejÅ›ciu na ktÃ³re gracz musi zapÅ‚aciÄ‡ okreÅ›lony podatek.
+ * Pole planszy, po wejœciu na które gracz musi zap³aciæ okreœlony podatek.
  */
 public class PolePodatek extends PoleGry implements Pole
 {
+	/**
+	 * Pole przechowuj¹ce kwotê do zap³aty po staniêciu na Polu Podatku.
+	 */
     private int kwotaPodatku;
 
+    /**
+     * Konstruktor Pola Podatku
+     * @param nazwa pola
+     * @param kwotaPodatku Kwota Podatku do zap³aty
+     */
     public PolePodatek(String nazwa, int kwotaPodatku) {
         super(nazwa);
         this.kwotaPodatku = kwotaPodatku;
     }
 
     /**
-     * {@inheritDoc}
-     * Odejmuje graczowi iloÅ›Ä‡ pieniÄ™dzy rÃ³wnÄ… podatkowi, ktÃ³ry
-     * musi on zapÅ‚aciÄ‡. W wyniku tej akcji iloÅ›Ä‡ pieniÄ™dzy posiadana przez gracza moÅ¼e staÄ‡ siÄ™ ujemna,
+     * Odejmuje graczowi iloœæ pieniêdzy równ¹ podatkowi, który
+     * musi on zap³aciæ. Iloœæ pieniêdzy posiadana przez gracza mo¿e staæ siê ujemna,
      * jest to sprawdzane dopiero pod koniec tury.
-     * @param gracz gracz, ktÃ³ry wszedÅ‚ na pole
+     * @param gracz gracz, który wszed³ na pole
      */
     @Override
     public void PodejmijCzynnosc(Gracz gracz)
     {
-        String wiadomosc = "ZapÅ‚aÄ‡ " + kwotaPodatku + " podatku.";
+        String wiadomosc = "Zap³aæ " + kwotaPodatku + " podatku.";
         Okienka.WyswietlWiadomosc(wiadomosc, "Podatek");
         gracz.odejmijPieniadze(kwotaPodatku);
     }
